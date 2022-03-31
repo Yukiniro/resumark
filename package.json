@@ -4,9 +4,11 @@
   "description": "Resume for markdwon",
   "main": "index.ts",
   "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "lint": "npx eslint src/**",
     "prettier": "npx prettier src/** --write",
-    "build": "npx rollup -c rollup.config.js",
     "test": "npx vitest",
     "test:run": "npx vitest run",
     "test:coverrage": "npx vitest --coverage",
@@ -20,7 +22,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-		"url": "https://github.com/Yukiniro/resumark"
+    "url": "https://github.com/Yukiniro/resumark"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
@@ -31,6 +33,7 @@
     "@rollup/plugin-typescript": "^8.3.1",
     "@yukiniro/eslint-config": "^0.0.3",
     "eslint": "^8.11.0",
+    "marked": "^4.0.12",
     "prettier": "^2.6.0",
     "prettier-eslint": "^13.0.0",
     "rollup": "^2.70.1",
@@ -40,5 +43,8 @@
     "tslib": "^2.3.1",
     "typescript": "^4.6.2",
     "vitest": "^0.7.6"
+  },
+  "dependencies": {
+    "vite": "^2.9.1"
   }
 }
