@@ -1,5 +1,6 @@
-import { md } from "./plugin/vite-plugin-import-md";
+import { defineConfig } from "vite";
+import { imd } from "vite-plugin-import-md";
 
-export default {
-  plugins: [md()],
-};
+export default defineConfig({
+  plugins: [imd()],
+});
