@@ -16,6 +16,7 @@ specifiers:
   rollup-plugin-filesize: ^9.1.2
   rollup-plugin-terser: ^7.0.2
   rollup-plugin-typescript2: ^0.31.2
+  sugar-high: ^0.2.1
   tslib: ^2.3.1
   typescript: ^4.6.2
   vite: ^2.9.1
@@ -40,6 +41,7 @@ devDependencies:
   rollup-plugin-filesize: 9.1.2
   rollup-plugin-terser: 7.0.2_rollup@2.70.1
   rollup-plugin-typescript2: 0.31.2_rollup@2.70.1+typescript@4.6.2
+  sugar-high: 0.2.1
   tslib: 2.3.1
   typescript: 4.6.2
   vitest: 0.7.6
@@ -4377,6 +4379,10 @@ packages:
   /strip-json-comments/3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
+    dev: true
+
+  /sugar-high/0.2.1:
+    resolution: {integrity: sha512-3javXhaed+uJm4+rV71Q6lyfzjy+2zNwyLvTvmbyV9QWM3tK0IGHzRn5HH7aa2P/bJMdcCDAimA6bg684DGGdg==}
     dev: true
 
   /supports-color/2.0.0:

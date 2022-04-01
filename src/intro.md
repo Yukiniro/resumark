@@ -1,7 +1,12 @@
 # Hello World
 
-I am Yukinir.
+I am Yukiniro.
 
 ```javascript
-console.log("Hello World");
+function sayHello() {
+  console.log("Hello World");
+}
+
+// call function
+sayHello();
 ```
