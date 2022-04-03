@@ -1,0 +1,32 @@
+/**
+ * Types that sugar-high have:
+ *
+ * identifier
+ * keyword
+ * string
+ * Class, number and null
+ * sign
+ * comment
+ * jsxliterals
+ */
+ .sh__class {
+  color: #2d5e9d;
+}
+.sh__identifier {
+  color: #2d333b;
+}
+.sh__sign {
+  color: #8996a3;
+}
+.sh__string {
+  color: #00a99a;
+}
+.sh__keyword {
+  color: #f47067;
+}
+.sh__comment {
+  color: #a19595;
+}
+.sh__jsxliterals {
+  color: #03066e;
+}
