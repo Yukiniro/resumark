@@ -16,8 +16,8 @@ specifiers:
   rollup-plugin-filesize: ^9.1.2
   rollup-plugin-terser: ^7.0.2
   rollup-plugin-typescript2: ^0.31.2
-  sugar-high: ^0.2.2
-  sugar-high-theme: ^0.0.4
+  sugar-high: ^0.3.0
+  sugar-high-theme: ^0.0.5
   tslib: ^2.3.1
   typescript: ^4.6.3
   vite: ^2.9.1
@@ -25,7 +25,7 @@ specifiers:
   vitest: ^0.7.13
 
 dependencies:
-  sugar-high-theme: 0.0.4
+  sugar-high-theme: 0.0.5
   vite: 2.9.1
 
 devDependencies:
@@ -44,7 +44,7 @@ devDependencies:
   rollup-plugin-filesize: 9.1.2
   rollup-plugin-terser: 7.0.2_rollup@2.70.1
   rollup-plugin-typescript2: 0.31.2_rollup@2.70.1+typescript@4.6.3
-  sugar-high: 0.2.2
+  sugar-high: 0.3.0
   tslib: 2.3.1
   typescript: 4.6.3
   vite-plugin-import-md: 0.0.3
@@ -4385,12 +4385,12 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /sugar-high-theme/0.0.4:
-    resolution: {integrity: sha512-85u86DFFbNXck0l+WXZGq7Hg5TTfsFp3Xt8VULsHwDrexXQpVb1uQ1KyhYjitrntsHt14D3hVv1WT5iHGyh8HA==}
+  /sugar-high-theme/0.0.5:
+    resolution: {integrity: sha512-4sZunwcrIOfH2wXJ8zqxmnmmha5BdEiGIzU4Q5xhFwH+iS9sKY78GZ2KkETDYC7+9V41HhMrXxe085oeCAL2tQ==}
     dev: false
 
-  /sugar-high/0.2.2:
-    resolution: {integrity: sha512-sKww3kvbFge9dZ+HTOJPHKCSWAQwYqZFXtlICVuKJE2w4ihFLYKfXYKJAzu0T8igQiNI+t3XTMVwTNR5M6iAOQ==}
+  /sugar-high/0.3.0:
+    resolution: {integrity: sha512-3b1oCMAhRT2Z/0BdWxt+1LBIkHGHxZAyqjMl2MUky8N9TNCyChQpE/SqMJ9DsyXFT5MItYoBAJVpbUtA9iQaUQ==}
     dev: true
 
   /supports-color/2.0.0:
