@@ -1,11 +1,11 @@
-import md from "./intro.md";
-import { highlight } from 'sugar-high';
+import md from "./intro.md?raw";
+import { highlight } from "sugar-high";
 import { marked } from "marked";
-import './index.css'
-import './sugar-high.css'
+import "./index.css";
+import "sugar-high-theme";
 
 const root = document.getElementById("app");
-marked.setOptions({
+console.log(md);
+root.innerHTML = marked.parse(md, {
   highlight,
-})
-root.innerHTML = marked.parse(md);
+});
