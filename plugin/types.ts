@@ -10,3 +10,9 @@ export interface AvatarConfig {
   avatarStyle?: string;
   avatarClassName?: string;
 }
+
+export interface GlobalConfig extends BlockConfig, AvatarConfig {}
+
+export interface ResumeOptions {
+  highlight?: () => string;
+}

@@ -1,5 +1,5 @@
 ---
-theme: default
+blockStyle: { border: "1px solid #000" }
 ---
 
 # Yukiniro ![头像](https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png)
