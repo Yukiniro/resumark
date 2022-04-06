@@ -11,7 +11,9 @@ export interface AvatarConfig {
   avatarClassName?: string;
 }
 
-export interface GlobalConfig extends BlockConfig, AvatarConfig {}
+export interface GlobalConfig extends BlockConfig, AvatarConfig {
+  global: boolean;
+}
 
 export interface ResumeOptions {
   highlight?: () => string;
