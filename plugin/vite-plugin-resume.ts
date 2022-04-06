@@ -15,11 +15,19 @@ function parseBlock(block: Block) {
   const nextContent = [...content];
 
   let html = marked.parse(nextContent.join("\n"));
-  if (html && config && config.blockStyle) {
-    const style = Object.keys(config.blockStyle)
-      .map((key) => `${key}:${config.blockStyle[key]}`)
-      .join(";");
-    html = `<div style="${style}">${html}</div>`;
+  if (html && config) {
+    let style = "";
+    let className = "";
+    const { blockClassName, blockStyle } = config;
+    if (blockStyle) {
+      style = Object.keys(config.blockStyle)
+        .map((key) => `${key}:${config.blockStyle[key]}`)
+        .join(";");
+    }
+    if (blockClassName) {
+      className = blockClassName;
+    }
+    html = `<div style="${style}" class="${className}">${html}</div>`;
   }
   return html;
 }
@@ -42,12 +50,13 @@ export default function createResume(): Plugin {
               let curConfig = globalConfig ? { ...globalConfig } : null;
               if (curConfigArr.length) {
                 curConfig = yaml.load(curConfigArr.join("\n"));
-                if (!blocks.length) {
+                if (curConfig.global && !globalConfig) {
                   globalConfig = { ...curConfig };
                 }
+                delete curConfig.global;
               }
               blocks.push({
-                config: { ...globalConfig, ...curConfig },
+                config: { ...(globalConfig || {}), ...curConfig },
                 content: [...curContentArr],
               });
               curConfigArr.length = 0;

@@ -1,4 +1,5 @@
 ---
+global: true
 blockStyle: { border: "1px solid #000", margin: "4px", padding: "0 12px" }
 ---
 
@@ -11,6 +12,10 @@ blockStyle: { border: "1px solid #000", margin: "4px", padding: "0 12px" }
 - ![当前工作情况](https://api.iconify.design/ic:baseline-maps-home-work.svg?color=currentColor) 在职 -- 考虑机会
 - ![电话](https://api.iconify.design/ic:sharp-phone.svg?color=currentColor) 1878xxxx154
 - ![邮箱](https://api.iconify.design/ic:baseline-email.svg?color=currentColor) yukiniro@hotmail.com
+
+---
+blockClassName: 're_personal'
+---
 
 ## 个人优势
 
