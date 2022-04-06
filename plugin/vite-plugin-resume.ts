@@ -13,15 +13,15 @@ interface Block {
 function parseBlock(block: Block) {
   const { config, content } = block;
   const nextContent = [...content];
-  if (config && config.blockStyle) {
+
+  let html = marked.parse(nextContent.join("\n"));
+  if (html && config && config.blockStyle) {
     const style = Object.keys(config.blockStyle)
       .map((key) => `${key}:${config.blockStyle[key]}`)
       .join(";");
-    nextContent.unshift(`<div style="${style}">`);
-    nextContent.push("</div>");
+    html = `<div style="${style}">${html}</div>`;
   }
-
-  return marked.parse(nextContent.join("\n"));
+  return html;
 }
 
 export default function createResume(): Plugin {
@@ -30,7 +30,7 @@ export default function createResume(): Plugin {
     async transform(code, id) {
       if (fileRegex.test(id)) {
         try {
-          const lines = code.split(/\r?\n/g);
+          const lines = code.trim().split(/\r?\n/g);
           let globalConfig: GlobalConfig | null = null;
           let inCofnigTag = false;
           let curConfigArr = [];
@@ -41,7 +41,6 @@ export default function createResume(): Plugin {
             if (curContentArr.length) {
               let curConfig = globalConfig ? { ...globalConfig } : null;
               if (curConfigArr.length) {
-                console.log(curConfigArr.join("\n"));
                 curConfig = yaml.load(curConfigArr.join("\n"));
                 if (!blocks.length) {
                   globalConfig = { ...curConfig };
@@ -51,17 +50,17 @@ export default function createResume(): Plugin {
                 config: { ...globalConfig, ...curConfig },
                 content: [...curContentArr],
               });
+              curConfigArr.length = 0;
+              curContentArr.length = 0;
             }
           };
 
           lines.forEach((text) => {
+            if (/^(#|##)\s/.test(text) || (text === "---" && inCofnigTag)) {
+              append();
+            }
             if (text === "---") {
               inCofnigTag = !inCofnigTag;
-              if (inCofnigTag) {
-                append();
-                curConfigArr.length = 0;
-                curContentArr.length = 0;
-              }
             } else {
               if (inCofnigTag) {
                 curConfigArr.push(text);
@@ -71,7 +70,7 @@ export default function createResume(): Plugin {
             }
           });
           append();
-          const html = blocks.map((block) => parseBlock(block)).join();
+          const html = blocks.map((block) => parseBlock(block)).join("");
           return `export default \`${html}\``;
         } catch (e) {
           console.log(e);
