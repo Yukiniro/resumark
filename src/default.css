@@ -17,7 +17,6 @@
   object-fit: cover;
 }
 
-.re__avatar--circel {
+.re__avatar--circle {
   border-radius: 50%;
-  overflow: hidden;
 }
