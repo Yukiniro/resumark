@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "bittydash": "^0.0.9",
+    "classnames": "^2.3.1",
     "sugar-high-theme": "^0.0.5",
     "vite": "^2.9.1"
   }

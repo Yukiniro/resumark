@@ -1,0 +1,23 @@
+.re__personal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.re__personal span {
+  font-style: italic;
+  color: #939393;
+}
+
+.re__avatar {
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  object-position: center;
+  object-fit: cover;
+}
+
+.re__avatar--circel {
+  border-radius: 50%;
+  overflow: hidden;
+}

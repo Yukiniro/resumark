@@ -9,6 +9,7 @@ specifiers:
   '@rollup/plugin-typescript': ^8.3.1
   '@yukiniro/eslint-config': ^0.0.3
   bittydash: ^0.0.9
+  classnames: ^2.3.1
   eslint: ^8.12.0
   js-yaml: ^4.1.0
   marked: ^4.0.12
@@ -29,6 +30,7 @@ specifiers:
 
 dependencies:
   bittydash: 0.0.9
+  classnames: 2.3.1
   sugar-high-theme: 0.0.5
   vite: 2.9.1
 
@@ -1955,6 +1957,10 @@ packages:
     resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
     engines: {node: '>=10'}
     dev: true
+
+  /classnames/2.3.1:
+    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
+    dev: false
 
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
