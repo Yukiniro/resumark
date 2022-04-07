@@ -8,6 +8,7 @@ specifiers:
   '@rollup/plugin-babel': ^5.3.1
   '@rollup/plugin-typescript': ^8.3.1
   '@yukiniro/eslint-config': ^0.0.3
+  bittydash: ^0.0.9
   eslint: ^8.12.0
   js-yaml: ^4.1.0
   marked: ^4.0.12
@@ -27,6 +28,7 @@ specifiers:
   vitest: ^0.7.13
 
 dependencies:
+  bittydash: 0.0.9
   sugar-high-theme: 0.0.5
   vite: 2.9.1
 
@@ -1802,6 +1804,10 @@ packages:
     dependencies:
       tweetnacl: 0.14.5
     dev: true
+
+  /bittydash/0.0.9:
+    resolution: {integrity: sha512-JNJBqQstmjRMoUkmqX2DeuGDU9ZslgtUw47Sq4mzs55dAMN/JPBg8od73reW8XfLMyTqhnDKRtp7ILsNodIpcw==}
+    dev: false
 
   /boxen/5.1.2:
     resolution: {integrity: sha512-9gYgQKXx+1nP8mP7CzFyaUARhg7D3n1dF/FnErWmu9l6JvGpNUN278h0aSb+QjoiKSWG+iZ3uHrcqk0qrY9RQQ==}

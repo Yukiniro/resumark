@@ -1,34 +1,44 @@
 import { Plugin } from "vite";
 import yaml from "js-yaml";
 import { marked } from "marked";
-import { GlobalConfig, BlockConfig, ResumeOptions } from "./types";
+import { MainBlockConfig } from "./types";
+import { isUndefined, isObject } from "bittydash";
 
 const fileRegex = /\.(md)$/;
 
 interface Block {
-  config: BlockConfig;
+  config: MainBlockConfig;
   content: Array<string>;
+}
+
+function createStyleTextFromConfig(blockStyle: object | undefined) {
+  return isObject(blockStyle)
+    ? Object.keys(blockStyle)
+        .map((key) => `${key}:${blockStyle[key]}`)
+        .join(";")
+    : "";
 }
 
 function parseBlock(block: Block) {
   const { config, content } = block;
   const nextContent = [...content];
-
   let html = marked.parse(nextContent.join("\n"));
-  if (html && config) {
-    let style = "";
-    let className = "";
-    const { blockClassName, blockStyle } = config;
-    if (blockStyle) {
-      style = Object.keys(config.blockStyle)
-        .map((key) => `${key}:${config.blockStyle[key]}`)
-        .join(";");
-    }
-    if (blockClassName) {
-      className = blockClassName;
-    }
-    html = `<div style="${style}" class="${className}">${html}</div>`;
+  const { blockClassName, blockStyle, name, summary, avatarUrl } = config;
+  let style = createStyleTextFromConfig(blockStyle);
+  if (isUndefined(name)) {
+    html = `<div style="${style}" class="${blockClassName}">${html}</div>`;
+  } else {
+    html = `
+        <div>
+          <div>
+            <h1>${name}</h1>
+            <span>${summary}</span>
+          </div>
+          <img src=${avatarUrl} />
+        </div>
+      `.trim();
   }
+
   return html;
 }
 
@@ -39,7 +49,6 @@ export default function createResume(): Plugin {
       if (fileRegex.test(id)) {
         try {
           const lines = code.trim().split(/\r?\n/g);
-          let globalConfig: GlobalConfig | null = null;
           let inCofnigTag = false;
           let curConfigArr = [];
           let curContentArr = [];
@@ -47,16 +56,12 @@ export default function createResume(): Plugin {
 
           const append = () => {
             if (curContentArr.length) {
-              let curConfig = globalConfig ? { ...globalConfig } : null;
+              let curConfig = null;
               if (curConfigArr.length) {
                 curConfig = yaml.load(curConfigArr.join("\n"));
-                if (curConfig.global && !globalConfig) {
-                  globalConfig = { ...curConfig };
-                }
-                delete curConfig.global;
               }
               blocks.push({
-                config: { ...(globalConfig || {}), ...curConfig },
+                config: { ...curConfig },
                 content: [...curContentArr],
               });
               curConfigArr.length = 0;

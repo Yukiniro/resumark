@@ -1,19 +1,16 @@
 export interface BlockConfig {
-  theme?: string;
   blockStyle?: object;
   blockClassName?: string;
 }
 
-export interface AvatarConfig {
-  avatar?: string;
+export interface PersonConfig {
+  name?: string;
+  summary?: string;
+  avatarUrl?: string;
   avatarShape?: "circle" | "rect";
-  avatarStyle?: string;
-  avatarClassName?: string;
 }
 
-export interface GlobalConfig extends BlockConfig, AvatarConfig {
-  global: boolean;
-}
+export interface MainBlockConfig extends BlockConfig, PersonConfig {}
 
 export interface ResumeOptions {
   highlight?: () => string;
