@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { parse } from "../../core/parse";
-import pdf from "html-pdf";
+import html2pdf from "html2pdf.js";
 import md from "../../src/intro.md";
 import "../../src/default.css";
 
@@ -16,14 +16,21 @@ function App() {
     setMarkdown(initValueRef.current);
   };
   const exportOnClick = () => {
-    console.log('export');
-    pdf.create(html).toFile("./resume.pdf", function (err: ErrorEvent) {
-      if (err) {
+    const dom = document.querySelector(".re__container");
+    html2pdf()
+      .set({
+        pagebreak: {
+          mode: "avoid-all",
+        },
+        filename: "resume.pdf",
+      })
+      .from(dom)
+      .toPdf()
+      .save()
+      .catch((e: ErrorEvent) => {
+        console.log(e);
         alert("Export Fail");
-      } else {
-        alert("Export Success");
-      }
-    });
+      });
   };
 
   useEffect(() => {
