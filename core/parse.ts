@@ -87,7 +87,11 @@ function parse(markdownText: string) {
   });
   append();
 
-  return blocks.map((block) => parseBlock(block)).join("");
+  return `
+    <div class="re__container">
+      ${blocks.map((block) => parseBlock(block)).join("")}
+    </div>
+  `;
 }
 
 export { parse };

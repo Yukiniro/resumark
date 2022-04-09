@@ -1,3 +1,7 @@
+.re__container {
+  padding: 18px;
+}
+
 .re__personal {
   display: flex;
   justify-content: space-between;
