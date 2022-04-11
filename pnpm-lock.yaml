@@ -12,7 +12,6 @@ specifiers:
   bittydash: ^0.0.9
   classnames: ^2.3.1
   eslint: ^8.12.0
-  is-base64: ^1.1.0
   js-yaml: ^4.1.0
   marked: ^4.0.12
   pnpm: ^6.32.4
@@ -48,7 +47,6 @@ devDependencies:
   '@rollup/plugin-typescript': 8.3.1_8fb0118e9d69f3600cbb8f144f7d456c
   '@yukiniro/eslint-config': 0.0.3_eslint@8.12.0
   eslint: 8.12.0
-  is-base64: 1.1.0
   js-yaml: 4.1.0
   marked: 4.0.12
   prettier: 2.6.1
@@ -3151,11 +3149,6 @@ packages:
 
   /ip/1.1.5:
     resolution: {integrity: sha1-vd7XARQpCCjAoDnnLvJfWq7ENUo=}
-    dev: true
-
-  /is-base64/1.1.0:
-    resolution: {integrity: sha512-Nlhg7Z2dVC4/PTvIFkgVVNvPHSO2eR/Yd0XzhGiXCXEvWnptXlXa/clQ8aePPiMuxEGcWfzWbGw2Fe3d+Y3v1g==}
-    hasBin: true
     dev: true
 
   /is-bigint/1.0.4:
