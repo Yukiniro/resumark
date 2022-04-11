@@ -1,8 +1,10 @@
 import yaml from "js-yaml";
 import { marked } from "marked";
+import isBase64 from "is-base64";
 import { MainBlockConfig } from "./types";
 import { isUndefined } from "bittydash";
 import classNames from "classnames";
+import { addCache, getCache, hasCache } from "./cache";
 
 interface Block {
   config: MainBlockConfig;
@@ -19,7 +21,7 @@ function createStyleTextFromConfig(blockStyle: BlockStyle = {}) {
   });
 }
 
-function parseBlock(block: Block) {
+async function parseBlock(block: Block) {
   const { config, content } = block;
   const nextContent = [...content];
   let html = marked.parse(nextContent.join("\n"));
@@ -41,15 +43,32 @@ function parseBlock(block: Block) {
             <h1>${name}</h1>
             <span>${summary}</span>
           </div>
-          <img class="${avatarClassName}" src=${avatarUrl} />
+          <img class="${avatarClassName}" src="${avatarUrl}" />
         </div>
       `.trim();
+  }
+
+  const items = [...html.matchAll(/(src=\")\S+\"/g)];
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+    const start = item.index + 5;
+    const end = item.index + item[0].length - 1;
+    const srcValue = html.slice(start, end);
+    if (!isBase64(srcValue)) {
+      let baseValue = "";
+      if (hasCache(srcValue)) {
+        baseValue = getCache(srcValue);
+      } else {
+        baseValue = await addCache(srcValue);
+      }
+      html = `${html.slice(0, start)}${baseValue}${html.slice(end)}`;
+    }
   }
 
   return html;
 }
 
-function parse(markdownText: string) {
+async function parse(markdownText: string) {
   const lines = markdownText.trim().split(/\r?\n/g);
   let inCofnigTag = false;
   let curConfigArr: Array<string> = [];
@@ -87,9 +106,14 @@ function parse(markdownText: string) {
   });
   append();
 
+  let htmlArr = [];
+  for (let i = 0; i < blocks.length; i++) {
+    htmlArr.push(await parseBlock(blocks[i]));
+  }
+
   return `
     <div class="re__container">
-      ${blocks.map((block) => parseBlock(block)).join("")}
+      ${htmlArr.join("")}
     </div>
   `;
 }

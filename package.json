@@ -33,6 +33,7 @@
     "@rollup/plugin-typescript": "^8.3.1",
     "@yukiniro/eslint-config": "^0.0.3",
     "eslint": "^8.12.0",
+    "is-base64": "^1.1.0",
     "js-yaml": "^4.1.0",
     "marked": "^4.0.12",
     "prettier": "^2.6.1",
@@ -49,8 +50,10 @@
     "vitest": "^0.7.13"
   },
   "dependencies": {
+    "add": "^2.0.6",
     "bittydash": "^0.0.9",
     "classnames": "^2.3.1",
+    "pnpm": "^6.32.4",
     "sugar-high-theme": "^0.0.5",
     "vite": "^2.9.1"
   }

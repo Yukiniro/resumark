@@ -16,7 +16,6 @@ function App() {
     setMarkdown(initValueRef.current);
   };
   const exportOnClick = () => {
-    const dom = document.querySelector(".re__container");
     html2pdf()
       .set({
         pagebreak: {
@@ -24,26 +23,28 @@ function App() {
         },
         filename: "resume.pdf",
       })
-      .from(dom)
+      .from(html)
       .toPdf()
       .save()
       .catch((e: ErrorEvent) => {
-        console.log(e);
-        alert("Export Fail");
+        alert(e);
       });
   };
 
   useEffect(() => {
     let curHTML = html;
-    try {
-      curHTML = parse(markdown);
-    } finally {
-      setHTML(curHTML);
-    }
+    parse(markdown)
+      .then((parseHTML) => {
+        setHTML(parseHTML);
+      })
+      .catch((e) => {
+        console.log(e);
+        setHTML(curHTML);
+      });
   }, [markdown]);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen m-auto w-10/12">
       <h1 className="text-center leading-loose font-mono text-xl p-8">
         Preview Your Resume With Markdown
       </h1>
@@ -55,7 +56,7 @@ function App() {
           Export
         </button>
       </div>
-      <div className="flex min-h-screen-sm">
+      <div className="flex justify-between min-h-screen-sm">
         <textarea
           className="w-1/2 border-solid border-1 border-cyan-200"
           value={markdown}

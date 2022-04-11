@@ -8,11 +8,14 @@ specifiers:
   '@rollup/plugin-babel': ^5.3.1
   '@rollup/plugin-typescript': ^8.3.1
   '@yukiniro/eslint-config': ^0.0.3
+  add: ^2.0.6
   bittydash: ^0.0.9
   classnames: ^2.3.1
   eslint: ^8.12.0
+  is-base64: ^1.1.0
   js-yaml: ^4.1.0
   marked: ^4.0.12
+  pnpm: ^6.32.4
   prettier: ^2.6.1
   prettier-eslint: ^13.0.0
   rollup: ^2.70.1
@@ -29,8 +32,10 @@ specifiers:
   vitest: ^0.7.13
 
 dependencies:
+  add: 2.0.6
   bittydash: 0.0.9
   classnames: 2.3.1
+  pnpm: 6.32.4
   sugar-high-theme: 0.0.5
   vite: 2.9.1
 
@@ -43,6 +48,7 @@ devDependencies:
   '@rollup/plugin-typescript': 8.3.1_8fb0118e9d69f3600cbb8f144f7d456c
   '@yukiniro/eslint-config': 0.0.3_eslint@8.12.0
   eslint: 8.12.0
+  is-base64: 1.1.0
   js-yaml: 4.1.0
   marked: 4.0.12
   prettier: 2.6.1
@@ -1590,6 +1596,10 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
     dev: true
+
+  /add/2.0.6:
+    resolution: {integrity: sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU=}
+    dev: false
 
   /agent-base/6.0.2:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
@@ -3143,6 +3153,11 @@ packages:
     resolution: {integrity: sha1-vd7XARQpCCjAoDnnLvJfWq7ENUo=}
     dev: true
 
+  /is-base64/1.1.0:
+    resolution: {integrity: sha512-Nlhg7Z2dVC4/PTvIFkgVVNvPHSO2eR/Yd0XzhGiXCXEvWnptXlXa/clQ8aePPiMuxEGcWfzWbGw2Fe3d+Y3v1g==}
+    hasBin: true
+    dev: true
+
   /is-bigint/1.0.4:
     resolution: {integrity: sha512-zB9CruMamjym81i2JZ3UMn54PKGsQzsJeo6xvN3HJJ4CAsQNB6iRutp2To77OfCNuoxspsIhzaPoO1zyCEhFOg==}
     dependencies:
@@ -3924,6 +3939,12 @@ packages:
     dependencies:
       find-up: 5.0.0
     dev: true
+
+  /pnpm/6.32.4:
+    resolution: {integrity: sha512-rOG+VpOzs6g/MR5HWc8KTlLAx3ljdRJCMQwSg1DE/hzAaqF/Y2zIHH0u6dZw/XnRb9w1U8rOs9MJT9jMt7e+Qw==}
+    engines: {node: '>=12.17'}
+    hasBin: true
+    dev: false
 
   /postcss/8.4.12:
     resolution: {integrity: sha512-lg6eITwYe9v6Hr5CncVbK70SoioNQIq81nsaG86ev5hAidQvmOeETBqs7jm43K2F5/Ley3ytDtriImV6TpNiSg==}

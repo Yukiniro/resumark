@@ -5,6 +5,8 @@ specifiers:
   '@types/react-dom': ^17.0.10
   '@vitejs/plugin-react': ^1.0.7
   html2pdf.js: ^0.10.1
+  is-base64: ^1.1.0
+  node-base64-image: ^2.0.4
   react: ^17.0.2
   react-dom: ^17.0.2
   typescript: ^4.5.4
@@ -14,6 +16,8 @@ specifiers:
 
 dependencies:
   html2pdf.js: 0.10.1
+  is-base64: 1.1.0
+  node-base64-image: 2.0.4
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
 
@@ -424,6 +428,14 @@ packages:
     hasBin: true
     dev: false
 
+  /axios/0.25.0:
+    resolution: {integrity: sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==}
+    dependencies:
+      follow-redirects: 1.14.9
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /base64-arraybuffer/1.0.2:
     resolution: {integrity: sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==}
     engines: {node: '>= 0.6.0'}
@@ -791,6 +803,16 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
+  /follow-redirects/1.14.9:
+    resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: false
+
   /fsevents/2.3.2:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -846,6 +868,11 @@ packages:
       es6-promise: 4.2.8
       html2canvas: 1.4.1
       jspdf: 2.5.1
+    dev: false
+
+  /is-base64/1.1.0:
+    resolution: {integrity: sha512-Nlhg7Z2dVC4/PTvIFkgVVNvPHSO2eR/Yd0XzhGiXCXEvWnptXlXa/clQ8aePPiMuxEGcWfzWbGw2Fe3d+Y3v1g==}
+    hasBin: true
     dev: false
 
   /is-core-module/2.8.1:
@@ -944,6 +971,15 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: true
+
+  /node-base64-image/2.0.4:
+    resolution: {integrity: sha512-brh2nblaVT1/cIRH5gqDx6VpdmjCh2P1f/XpE6j+IJpXWfC7NkkclEaMcZSQ/KvZrXLML0z9a5qN0mRQ4LGMJA==}
+    engines: {node: '>=10'}
+    dependencies:
+      axios: 0.25.0
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /node-releases/2.0.2:
     resolution: {integrity: sha512-XxYDdcQ6eKqp/YjI+tb2C5WM2LgjnZrfYg4vgQt49EK268b6gYCHsBLrK2qvJo4FmCtqmKezb0WZFK4fkrZNsg==}
