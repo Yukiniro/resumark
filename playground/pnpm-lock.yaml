@@ -5,7 +5,6 @@ specifiers:
   '@types/react-dom': ^17.0.10
   '@vitejs/plugin-react': ^1.0.7
   html2pdf.js: ^0.10.1
-  is-base64: ^1.1.0
   node-base64-image: ^2.0.4
   react: ^17.0.2
   react-dom: ^17.0.2
@@ -16,7 +15,6 @@ specifiers:
 
 dependencies:
   html2pdf.js: 0.10.1
-  is-base64: 1.1.0
   node-base64-image: 2.0.4
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -868,11 +866,6 @@ packages:
       es6-promise: 4.2.8
       html2canvas: 1.4.1
       jspdf: 2.5.1
-    dev: false
-
-  /is-base64/1.1.0:
-    resolution: {integrity: sha512-Nlhg7Z2dVC4/PTvIFkgVVNvPHSO2eR/Yd0XzhGiXCXEvWnptXlXa/clQ8aePPiMuxEGcWfzWbGw2Fe3d+Y3v1g==}
-    hasBin: true
     dev: false
 
   /is-core-module/2.8.1:
