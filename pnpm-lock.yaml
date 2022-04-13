@@ -9,7 +9,7 @@ specifiers:
   '@rollup/plugin-typescript': ^8.3.1
   '@yukiniro/eslint-config': ^0.0.3
   add: ^2.0.6
-  bittydash: ^0.0.9
+  bittydash: ^0.0.11
   classnames: ^2.3.1
   eslint: ^8.12.0
   js-yaml: ^4.1.0
@@ -32,7 +32,7 @@ specifiers:
 
 dependencies:
   add: 2.0.6
-  bittydash: 0.0.9
+  bittydash: 0.0.11
   classnames: 2.3.1
   pnpm: 6.32.4
   sugar-high-theme: 0.0.5
@@ -1815,8 +1815,8 @@ packages:
       tweetnacl: 0.14.5
     dev: true
 
-  /bittydash/0.0.9:
-    resolution: {integrity: sha512-JNJBqQstmjRMoUkmqX2DeuGDU9ZslgtUw47Sq4mzs55dAMN/JPBg8od73reW8XfLMyTqhnDKRtp7ILsNodIpcw==}
+  /bittydash/0.0.11:
+    resolution: {integrity: sha512-ja1ymaWww23qzOg3w+5N1+JQoBiCtAv2YHTTjYSwgNz+tYrAuejP/7QnMbS9JLQI63JbBx+7pcXmP4kv9Sop5g==}
     dev: false
 
   /boxen/5.1.2:
