@@ -24,3 +24,12 @@
 .re__avatar--circle {
   border-radius: 50%;
 }
+
+.re__container ul,
+ol {
+  padding-left: 20px;
+}
+
+// .re__container li {
+//   padding-left: 20px;
+// }

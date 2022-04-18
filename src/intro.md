@@ -6,7 +6,7 @@ avatarShape: circle
 blockStyle: { border: "1px solid #000", margin: "4px", padding: "0 12px" }
 ---
 
-## Basic Info
+## 基本信息
 
 - ![工作经验](https://api.iconify.design/ic:outline-work.svg?color=currentColor) 5 年工作经验
 - ![学历](https://api.iconify.design/zondicons:education.svg?color=currentColor) 本科
