@@ -33,7 +33,7 @@ function App() {
 
   useEffect(() => {
     let curHTML = html;
-    parse(markdown)
+    parse(markdown, fetch)
       .then((parseHTML) => {
         setHTML(parseHTML);
       })

@@ -6,6 +6,7 @@ import "./default.css";
 import "sugar-high-theme";
 
 const root = document.getElementById("app");
+console.log(md);
 root.innerHTML = marked.parse(md, {
   highlight,
 });

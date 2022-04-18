@@ -1,3 +1,5 @@
+import { Fetch } from "./types";
+
 const cacheMap = new Map();
 
 function hasCache(key: string): boolean {
@@ -8,7 +10,7 @@ function getCache(key: string): string {
   return cacheMap.get(key);
 }
 
-async function addCache(value: string): Promise<string> {
+async function addCache(value: string, fetch: Fetch): Promise<string> {
   const res = await fetch(value);
   const resBlob = await res.blob();
   const blobUrl = URL.createObjectURL(resBlob);

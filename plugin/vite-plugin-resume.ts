@@ -1,5 +1,6 @@
 import { Plugin } from "vite";
 import { parse } from "../core/parse";
+import fetch from "node-fetch";
 
 const fileRegex = /\.(md)$/;
 export default function createResume(): Plugin {
@@ -8,7 +9,7 @@ export default function createResume(): Plugin {
     async transform(code, id) {
       if (fileRegex.test(id)) {
         try {
-          const html = parse(code);
+          const html = parse(code, fetch);
           return `export default \`${html}\``;
         } catch (e) {
           console.log(e);

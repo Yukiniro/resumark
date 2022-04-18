@@ -15,3 +15,5 @@ export interface MainBlockConfig extends BlockConfig, PersonConfig {}
 export interface ResumeOptions {
   highlight?: () => string;
 }
+
+export type Fetch = (url: string) => any;

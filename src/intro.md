@@ -1,7 +1,7 @@
 ---
 name: Yukiniro
 summary: Done is better than perfect.
-avatarUrl: https://images.unsplash.com/photo-1649411515365-ee05b3231df3?q=80
+avatarUrl: https://images.unsplash.com/photo-1580761743271-99d222ab2758?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80
 avatarShape: circle
 blockStyle: { border: "1px solid #000", margin: "4px", padding: "0 12px" }
 ---

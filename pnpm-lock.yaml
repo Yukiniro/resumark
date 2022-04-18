@@ -9,11 +9,12 @@ specifiers:
   '@rollup/plugin-typescript': ^8.3.1
   '@yukiniro/eslint-config': ^0.0.3
   add: ^2.0.6
-  bittydash: ^0.0.11
+  bittydash: ^0.0.12
   classnames: ^2.3.1
   eslint: ^8.12.0
   js-yaml: ^4.1.0
   marked: ^4.0.12
+  node-fetch: '2'
   pnpm: ^6.32.4
   prettier: ^2.6.1
   prettier-eslint: ^13.0.0
@@ -32,7 +33,7 @@ specifiers:
 
 dependencies:
   add: 2.0.6
-  bittydash: 0.0.11
+  bittydash: 0.0.12
   classnames: 2.3.1
   pnpm: 6.32.4
   sugar-high-theme: 0.0.5
@@ -49,6 +50,7 @@ devDependencies:
   eslint: 8.12.0
   js-yaml: 4.1.0
   marked: 4.0.12
+  node-fetch: 2.6.7
   prettier: 2.6.1
   prettier-eslint: 13.0.0
   rollup: 2.70.1
@@ -1815,8 +1817,8 @@ packages:
       tweetnacl: 0.14.5
     dev: true
 
-  /bittydash/0.0.11:
-    resolution: {integrity: sha512-ja1ymaWww23qzOg3w+5N1+JQoBiCtAv2YHTTjYSwgNz+tYrAuejP/7QnMbS9JLQI63JbBx+7pcXmP4kv9Sop5g==}
+  /bittydash/0.0.12:
+    resolution: {integrity: sha512-neTmowPQwNzDsZ1CV07SmS3DdF5O2w3gWdQJEtK7lBdxvjmG6/c3w52ePJujcPEKqI+Azvamp5o5f7M5t8Q2Kg==}
     dev: false
 
   /boxen/5.1.2:
@@ -3616,6 +3618,18 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
+  /node-fetch/2.6.7:
+    resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    dependencies:
+      whatwg-url: 5.0.0
+    dev: true
+
   /node-gyp/7.1.2:
     resolution: {integrity: sha512-CbpcIo7C3eMu3dL1c3d0xw449fHIGALIJsRP4DDPHpyiW8vcriNY7ubh9TE4zEKfSxscY7PjeFnshE7h75ynjQ==}
     engines: {node: '>= 10.12.0'}
@@ -4534,6 +4548,10 @@ packages:
       punycode: 2.1.1
     dev: true
 
+  /tr46/0.0.3:
+    resolution: {integrity: sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=}
+    dev: true
+
   /tsconfig-paths/3.14.1:
     resolution: {integrity: sha512-fxDhWnFSLt3VuTwtvJt5fpwxBHg5AdKWMsgcPOOIilyjymcYVZoCQF8fvFRezCNfblEXmi+PcM1eYHeOAgXCOQ==}
     dependencies:
@@ -4788,6 +4806,17 @@ packages:
       lodash: 4.17.21
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /webidl-conversions/3.0.1:
+    resolution: {integrity: sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=}
+    dev: true
+
+  /whatwg-url/5.0.0:
+    resolution: {integrity: sha1-lmRU6HZUYuN2RNNib2dCzotwll0=}
+    dependencies:
+      tr46: 0.0.3
+      webidl-conversions: 3.0.1
     dev: true
 
   /which-boxed-primitive/1.0.2:

@@ -1,6 +1,6 @@
 import yaml from "js-yaml";
 import { marked } from "marked";
-import { MainBlockConfig } from "./types";
+import { Fetch, MainBlockConfig } from "./types";
 import { isUndefined } from "bittydash";
 import classNames from "classnames";
 import { addCache, getCache, hasCache } from "./cache";
@@ -20,7 +20,7 @@ function createStyleTextFromConfig(blockStyle: BlockStyle = {}) {
   });
 }
 
-async function parseBlock(block: Block) {
+async function parseBlock(block: Block, fetch: Fetch) {
   const { config, content } = block;
   const nextContent = [...content];
   let html = marked.parse(nextContent.join("\n"));
@@ -58,7 +58,7 @@ async function parseBlock(block: Block) {
     if (hasCache(srcValue)) {
       baseValue = getCache(srcValue);
     } else {
-      baseValue = await addCache(srcValue);
+      baseValue = await addCache(srcValue, fetch);
     }
     html = `${html.slice(0, start)}${baseValue}${html.slice(end)}`;
   }
@@ -66,7 +66,7 @@ async function parseBlock(block: Block) {
   return html;
 }
 
-async function parse(markdownText: string) {
+async function parse(markdownText: string, fetch: Fetch) {
   const lines = markdownText.trim().split(/\r?\n/g);
   let inCofnigTag = false;
   let curConfigArr: Array<string> = [];
@@ -106,8 +106,10 @@ async function parse(markdownText: string) {
 
   let htmlArr = [];
   for (let i = 0; i < blocks.length; i++) {
-    htmlArr.push(await parseBlock(blocks[i]));
+    htmlArr.push(await parseBlock(blocks[i], fetch));
   }
+
+  console.log(htmlArr);
 
   return `
     <div class="re__container">
