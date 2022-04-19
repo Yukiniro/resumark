@@ -14,10 +14,15 @@ interface BlockStyle {
   [key: string]: string | number;
 }
 
+let globalBlockStyle: string | object | undefined;
+let globalBlockClassName: string | undefined;
+
 function createStyleTextFromConfig(blockStyle: BlockStyle = {}) {
-  return Object.keys(blockStyle).map((key) => {
-    return `${key}:${blockStyle[key]}`;
-  });
+  return Object.keys(blockStyle)
+    .map((key) => {
+      return `${key}:${blockStyle[key]}`;
+    })
+    .join("; ");
 }
 
 async function parseBlock(block: Block, fetch: Fetch) {
@@ -26,8 +31,10 @@ async function parseBlock(block: Block, fetch: Fetch) {
   let html = marked.parse(nextContent.join("\n"));
   const { blockClassName, blockStyle, name, summary, avatarUrl, avatarShape } =
     config;
-  let style = createStyleTextFromConfig((blockStyle || {}) as BlockStyle);
-  let className = classNames("re__block", blockClassName);
+  globalBlockStyle = blockStyle || globalBlockStyle;
+  globalBlockClassName = blockClassName || globalBlockClassName;
+  let style = createStyleTextFromConfig((globalBlockStyle || {}) as BlockStyle);
+  let className = classNames("re__block", globalBlockClassName);
   if (isUndefined(name)) {
     html = `<div style="${style}" class="${className}">${html}</div>`;
   } else {
@@ -108,8 +115,6 @@ async function parse(markdownText: string, fetch: Fetch) {
   for (let i = 0; i < blocks.length; i++) {
     htmlArr.push(await parseBlock(blocks[i], fetch));
   }
-
-  console.log(htmlArr);
 
   return `
     <div class="re__container">

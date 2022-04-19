@@ -3,7 +3,7 @@ name: Yukiniro
 summary: javascript, react, redux, canvas
 avatarUrl: https://images.unsplash.com/photo-1580761743271-99d222ab2758?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80
 avatarShape: circle
-blockStyle: { border: "1px solid #000", margin: "4px", padding: "0 12px" }
+blockStyle: { padding: "2px 0" }
 ---
 
 ## 基本信息
@@ -30,7 +30,7 @@ blockStyle: { border: "1px solid #000", margin: "4px", padding: "0 12px" }
   1. 使用 react + redux + less 开发单页应用的界面及功能；
   2. 使用 canvas + dom 实现图形、视频及文字的渲染；
   3. 针对测试结果快速定位与解决出现的 bug；
-  4. 进行页面访问优化，模板页面pagespeed评分从60分优化到90分；
+  4. 进行页面访问优化，模板页面 pagespeed 评分从 60 分优化到 90 分；
   5. 进行单页应用性能优化，解决播放时的卡顿问题（对象动态预加载，缩略图渲染优化）；
   6. 独立负责项目的技术选型及功能开发并多次进行内部技术分享；
   7. 搭建内部私有库进行组件/代码重用；
