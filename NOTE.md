@@ -1,11 +1,13 @@
 ```typescript
-interface ResumeConfig {
-  theme?: string;
+interface BlockConfig {
   blockStyle?: object;
   blockClassName?: string;
-  avatar?: string,
-  avatarShape?: 'circle' | 'rect';
-  avatarStyle?: string;
-  avatarClassName?: string;
+}
+
+interface PersonConfig {
+  name?: string;
+  summary?: string;
+  avatarUrl?: string;
+  avatarShape?: "circle" | "rect";
 }
 ```

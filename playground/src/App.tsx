@@ -53,7 +53,7 @@ function App() {
           Reset
         </button>
         <button onClick={exportOnClick} className="btn mx-2">
-          Export
+          Export to PDF
         </button>
       </div>
       <div className="flex justify-between min-h-screen-sm">

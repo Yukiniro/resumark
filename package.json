@@ -1,6 +1,6 @@
 {
   "name": "resumark",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Resume for markdwon",
   "main": "index.ts",
   "scripts": {
