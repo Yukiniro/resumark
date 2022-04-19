@@ -8,7 +8,12 @@
   align-items: center;
 }
 
-.re__personal span {
+.re__personal__name {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.re__personal__summary {
   font-style: italic;
   color: #939393;
 }

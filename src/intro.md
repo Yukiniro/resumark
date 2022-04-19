@@ -21,7 +21,7 @@ blockStyle: { padding: "2px 0" }
 - [toukey.js](https://toukey.vercel.app/) -- 简单高效的键盘事件库
 - [dessin.js](https://github.com/Yukiniro/dessin) -- 基于 canvas 的图形渲染库
 - [bittydash.js](https://bittydash.vercel.app/) -- 小且精简的公共函数库
-- [resumark](https://resumark.vercel.app/) -- 基于 markdown 的简历生成器（此简历由 resumark 制作）
+- [resumark](https://resumark.vercel.app/) -- 基于 markdown 的简历生成器
 
 ## 工作经历
 

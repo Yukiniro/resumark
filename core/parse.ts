@@ -46,8 +46,8 @@ async function parseBlock(block: Block, fetch: Fetch) {
     html = `
         <div class="${className}">
           <div class="re__personal__info">
-            <h1>${name}</h1>
-            <span>${summary}</span>
+            <h1 class="re__personal__name">${name}</h1>
+            <span class="re__personal__summary">${summary}</span>
           </div>
           <img class="${avatarClassName}" src="${avatarUrl}" />
         </div>
