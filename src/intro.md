@@ -8,7 +8,7 @@ blockStyle: { padding: "2px 0" }
 
 ## 基本信息
 
-- ![工作经验](https://api.iconify.design/ic:outline-work.svg?color=currentColor) 4 年工作经验
+- ![工作经验](https://api.iconify.design/ic:outline-work.svg?color=currentColor) 5 年工作经验
 - ![教育情况](https://api.iconify.design/zondicons:education.svg?color=currentColor) 四川师范大学 - 数字媒体技术（本科）
 - ![就职情况](https://api.iconify.design/ic:baseline-maps-home-work.svg?color=currentColor) 在职 -- 考虑机会
 - ![联系电话](https://api.iconify.design/ic:sharp-phone.svg?color=currentColor) 1878xxxx154
@@ -21,6 +21,7 @@ blockStyle: { padding: "2px 0" }
 - [toukey.js](https://toukey.vercel.app/) -- 简单高效的键盘事件库
 - [dessin.js](https://github.com/Yukiniro/dessin) -- 基于 canvas 的图形渲染库
 - [bittydash.js](https://bittydash.vercel.app/) -- 小且精简的公共函数库
+- [comelog.js](https://github.com/Yukiniro/comelog) -- 基于浏览器且美观的日志输出库
 - [resumark](https://resumark.vercel.app/) -- 基于 markdown 的简历生成器
 
 ## 工作经历
