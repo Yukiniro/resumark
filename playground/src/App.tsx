@@ -3,6 +3,7 @@ import { parse } from "../../core/parse";
 import html2pdf from "html2pdf.js";
 import md from "../../src/intro.md";
 import "../../src/default.css";
+import GitHubCorners from '@uiw/react-github-corners'
 
 function App() {
   const initValueRef = useRef(md.trim());
@@ -45,6 +46,7 @@ function App() {
 
   return (
     <div className="min-h-screen m-auto w-10/12">
+      <GitHubCorners href="https://github.com/Yukiniro/resumark" />
       <h1 className="text-center leading-loose font-mono text-xl p-8">
         Preview Your Resume With Markdown
       </h1>
