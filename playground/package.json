@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "cd ../ && pnpm i && cd playground && tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prettier": "npx prettier src/** --write"
   },
   "dependencies": {
     "@uiw/react-github-corners": "^1.5.15",

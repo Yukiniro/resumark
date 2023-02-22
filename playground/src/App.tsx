@@ -3,7 +3,7 @@ import { parse } from "../../core/parse";
 import html2pdf from "html2pdf.js";
 import md from "../../src/intro.md";
 import "../../src/default.css";
-import GitHubCorners from '@uiw/react-github-corners'
+import GitHubCorners from "@uiw/react-github-corners";
 
 function App() {
   const initValueRef = useRef(md.trim());
